@@ -1,0 +1,6 @@
+{
+    "port": 443,
+    "host": "localhost",
+    "keyPath": "/keys/server.key",
+    "certPath": "/keys/server.cert"
+}
