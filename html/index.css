@@ -52,15 +52,10 @@ header h1 {
 @keyframes transRights {
     0% {
         transform: scaleX(0) scaleY(0);
-        opacity: 0;
-    }
-
-    25% {
-        opacity: 1;
     }
 
     50% {
-        transform: scaleX(0.5) scaleY(1);
+        transform: scaleX(0.25) scaleY(1);
     }
 
     100% {

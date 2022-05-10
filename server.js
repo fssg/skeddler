@@ -17,8 +17,8 @@ const path = require('path');
 // External dependencies
 const mongodb = require('mongodb');
 
-// Local modules
-const cleaner = require('./uncleaner.js');
+// Local modules (some are submodules)
+const cleaner = require('./c893e7ce5ba065b45a946d82a78e5f5a/uncleaner');
 const cfg = require('./cfg.json');
 
 // Program constants
