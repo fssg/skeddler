@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/fssg/skeddler/issues"
   },
-  "homepage": "https://github.com/fssg/skeddler#readme"
+  "homepage": "https://github.com/fssg/skeddler#readme",
+  "dependencies": {
+    "mongodb": "^4.5.0"
+  }
 }

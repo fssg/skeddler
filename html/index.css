@@ -1,7 +1,8 @@
 @font-face {
-    font-family: 'Roboto';
+    font-family: 'Roboto Flex';
+    font-weight: normal;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 100 1000;
     src: url(Roboto_Flex/RobotoFlex-VariableFont_GRAD\,XTRA\,YOPQ\,YTAS\,YTDE\,YTFI\,YTLC\,YTUC\,opsz\,slnt\,wdth\,wght.ttf) format('truetype');
 }
 
@@ -11,13 +12,17 @@
 
 html,
 body {
-    display: flex;
+    display: inline-block;
+    text-align: center;
+    /* display: flex;
     flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center; */
     margin: 0;
     padding: 0;
-    font-family: 'Roboto';
     width: 100%;
     height: 100%;
+    font-family: 'Roboto Flex', 'Roboto', Helvetica, Arial, sans-serif;
 }
 
 header {
@@ -35,19 +40,101 @@ header h1 {
 }
 
 .activity {
-    border: solid 4pt #000;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #aaa;
+    animation: transRights 0.375s ease-out;
 }
 
-table {
+@keyframes transRights {
+    0% {
+        transform: scaleX(0) scaleY(0);
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: scaleX(0.5) scaleY(1);
+    }
+
+    100% {
+        transform: scaleX(1) scaleY(1);
+
+    }
+}
+
+
+#schedule {
+    margin: auto;
+    align-self: center;
+    width: 80vw;
     border-spacing: 0;
 }
 
-tr, th, td {
-    padding: 4pt;
+#schedule thead {
+    margin: 0;
 }
 
-thead {
-    margin: 0;
-    background-color: #000;
-    color: #fff;
+#schedule td {
+    padding: 0;
+}
+
+#schedule th,
+#schedule td {
+    border: solid 2pt #000;
+    border-radius: 0;
+    border-right-width: 1pt;
+    border-left-width: 1pt;
+}
+
+#schedule th {
+    text-align: center;
+    max-width: 96pt;
+    min-width: 96pt;
+    width: 96pt;
+    padding: 4pt;
+    font-size: 24pt;
+    font-weight: 500;
+    border-bottom: none;
+}
+
+#schedule th:first-child {
+    border-left-width: 2pt;
+    border-top-left-radius: 8pt;
+}
+
+#schedule th:last-child {
+    border-right-width: 2pt;
+    border-top-right-radius: 8pt;
+}
+
+#schedule td:first-child {
+    border-left-width: 2pt;
+}
+
+#schedule td:last-child {
+    border-right-width: 2pt;
+}
+
+
+#schedule th:nth-of-type(4n-3) {
+    background-color: #ff4040;
+}
+
+#schedule th:nth-of-type(4n-2) {
+    background-color: #ffc040;
+}
+
+#schedule th:nth-of-type(4n-1) {
+    background-color: #20e040;
+}
+
+#schedule th:nth-of-type(4n) {
+    background-color: #4080ff;
 }

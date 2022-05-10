@@ -1,0 +1,9 @@
+{
+    "port": 443,
+    "host": "localhost",
+    "keyPath": "/keys/server.key",
+    "certPath": "/keys/server.cert",
+    "mongodb": {
+        "uri": "mongodb://127.0.0.1:27017/"
+    }
+}
