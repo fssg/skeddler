@@ -6,6 +6,7 @@
 
 // Node modules
 const process = require('process');
+const EventEmitter = require('node:events');
 // const child_process = require('child_process');
 // const cluster = require('cluster');
 const http = require('http');
@@ -18,7 +19,7 @@ const path = require('path');
 const mongodb = require('mongodb');
 
 // Local modules (some are submodules)
-const cleaner = require('./c893e7ce5ba065b45a946d82a78e5f5a/uncleaner');
+const cleaner = require('./uncleaner.js');
 const cfg = require('./cfg.json');
 
 // Program constants
@@ -81,10 +82,7 @@ async function getUserDetails(query) {
 
 (async () => {
     await database;
-    const server = (useHttps ? https : http).createServer({ key, cert }, async (req, res) => {
-        res.writeHead(200, { 'Content-Type': 'text/plain' });
-        res.end(await getUserDetails());
-    });
+    const server = (useHttps ? https : http).createServer({ key, cert });
 
     server.listen(port, host, () => {
         console.log(`\x1b[32mServer open at \x1b[1m${useHttps ?
@@ -97,6 +95,10 @@ async function getUserDetails(query) {
         );
     });
 })();
+
+server.on('request', (req, res) => {
+    
+});
 
 // if (process.isPrimary && !useHttps) {
 //     (spawn HTTP redirector)
